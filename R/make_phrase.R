@@ -17,10 +17,9 @@
 #' @export
 
 
-
-make_phrase <- function(num, num_word, item, verb, adjective, location){
-
-
+make_phrase <- function(num_word, item, verb, adjective, location){
+  
+  
   verb <- str_replace_na(verb, "")
   adjective <- str_replace_na(adjective, "")
   location <- str_replace_na(location, "")
@@ -31,4 +30,13 @@ make_phrase <- function(num, num_word, item, verb, adjective, location){
 
 
 }
+
+# make_phrase(
+#             num_word = "ten",
+#             item = "lords",
+#             verb = "a-leaping",
+#             adjective = "",
+#             location = "")
+
+xmas<-xmas%>%mutate(Full.Phrase = pmap_chr(xmas,~make_phrase(..7,pluralize_gift(..3), ..4,..5,..6)))
 
