@@ -9,7 +9,10 @@
 #' @import glue
 #' @import purrr
 #'
+#' @import english
 #' @export
+
+xmas<-xmas%>%mutate(days_spelled=words(xmas$Day))
 pluralize_gift <- function(gift){
 
   gift<-str_replace(gift, "oo", "ee")
