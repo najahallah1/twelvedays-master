@@ -11,7 +11,7 @@
 #'
 #' @import english
 #' @export
-
+xmas <- read.csv("https://www.dropbox.com/s/e584pryn8evm1gz/xmas.csv?dl=1")
 xmas<-xmas%>%mutate(days_spelled=words(xmas$Day))
 pluralize_gift <- function(gift){
 
