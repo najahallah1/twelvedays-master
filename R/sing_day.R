@@ -12,6 +12,7 @@
 #' @import glue
 #' @import purrr
 #'
+#' @import english
 #' @export
 sing_line <- function(dataset, line, phrase_col){
 
